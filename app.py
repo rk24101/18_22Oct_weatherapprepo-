@@ -14,7 +14,9 @@ def get_weatherdata():
     param={'q':request.form.get('city'),'appid':request.form.get('appid'),'units':request.form.get('units')}
     response=requests.get(url,params=param)
     data=response.json()
-    return f'data : {data}'
+    city=data['name']
+    return f'data : {data}  city:{city}'
+    
 
 
 
@@ -31,4 +33,13 @@ if __name__=='__main__':
 # or libraries and will in help in installing them in the cloud system easily
 # and then we will push our code from "local system" to "github" and then to "cloud"
 # on the terminal in the 'weather_app' now type 'git init'  
-# then 'git add . '
+# then  git init
+# git add README.md
+# git commit -m "first commit"
+# git branch -M main
+# git remote add origin https://github.com/rk24101/18_22Oct_weatherapprepo-.git
+# git push -u origin main
+# this will push your all thing in 'weather_app' folder in the github repository
+# to clone from github repository we need to type 'git clone url_to_clone_from_git_repository'
+# in the python terminal
+# now we have deploy in the cloud from the github,we are using "render.com" for cloud
